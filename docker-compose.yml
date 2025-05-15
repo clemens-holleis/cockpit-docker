@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  cockpit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cockpit
+    ports:
+      - "8080:80"
+    volumes:
+      - ./storage:/var/www/html/cms/storage
+    restart: unless-stopped
