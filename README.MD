@@ -1,6 +1,6 @@
-# Cockpit Headless CMS (Docker)
+# Cockpit Headless CMS Docker
 
-Run [cockpit CMS](https://getcockpit.com/) locally inside a [docker](https://www.docker.com/) container. the persistent storage is your local machine. this setup can be used to develop static sites locally with a headless CMS.
+Run [cockpit CMS](https://getcockpit.com/) locally inside a [docker](https://www.docker.com/) container. The data persistance can be a mounted folder on the host machine or a docker volume.
 
 # Start
 
@@ -8,12 +8,9 @@ Run [cockpit CMS](https://getcockpit.com/) locally inside a [docker](https://www
 docker compose up
 ```
 
-# Deploy
+# Backup Docker Volume
 
-If you want to deploy a copy the `storage` folder to your deployment
-
-
-# Data Backup
+If you use a docker volume for storage you can use one of the scripts below to either create a `.tar.gz` backup archive or folder with the backup data.
 
 ```shell
 docker run --rm \
