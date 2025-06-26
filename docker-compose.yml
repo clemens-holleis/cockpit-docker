@@ -9,5 +9,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./storage:/var/www/html/cms/storage
+      - cockpit-data:/var/www/html/cockpit-core/storage
     restart: unless-stopped
+volumes:
+  cockpit-data:

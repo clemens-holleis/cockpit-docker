@@ -18,7 +18,7 @@ WORKDIR /var/www/html
 ADD https://files.getcockpit.com/releases/master/cockpit-core.zip /tmp/cockpit.zip
 RUN unzip /tmp/cockpit.zip -d /var/www/html && \
     rm /tmp/cockpit.zip && \
-    mv /var/www/html/cockpit-core /var/www/html/cms && \
+    echo '<?php\nheader("Location: ./cockpit-core");\nexit;\n' > /var/www/html/index.php && \
     chown -R www-data:www-data /var/www/html && \
     a2enmod rewrite
 
